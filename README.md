@@ -3,7 +3,7 @@
 ## Objectives
 
 1. Use `fetch()` to get remote data from GitHub
-2. Use `fethc()` to write data to GitHub
+2. Use `fetch()` to write data to GitHub
 
 ## Introduction
 
