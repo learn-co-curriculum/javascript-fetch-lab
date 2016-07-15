@@ -146,7 +146,6 @@ won't work so well if they are disabled!
 
 ![fetch()](http://missmonet.net/wp-content/uploads/2014/04/so-fetch-gretchen-xmas-gif.gif)
 
-For the tests, redefine a global fetch as a spy and make sure that the student's functions are calling the right endpoint(s)
 ## Resources
 
 - [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
