@@ -20,9 +20,9 @@ describe('index', () => {
 
     describe('showing issues', () => {
       it('has the right vals in template', () => {
-        const temp = document.getElementById('issues-template')
+        const temp = document.getElementById('issues-template').innerHTML
         expect(temp).toMatch(/{{#\s?each/)
-        expect(temp).toMatch(/{{\\\s?each/)
+        expect(temp).toMatch(/{{\/\s?each/)
         expect(temp).toMatch(/{{\s?url\s?}}/)
         expect(temp).toMatch(/{{\s?body\s?}}/)
         expect(temp).toMatch(/{{\s?title\s?}}/)
