@@ -109,11 +109,10 @@ Finally, we can examine the response in our `then` function just the
 same as we did with a `GET` request.
 
 **Top-tip:** Make sure you read the API documentation carefully! They
-will often specific which fields are required and which are optional,
+will often specify which fields are required and which are optional,
 as well as the format of the request body. Github expects JSON data in
 the body, but another API might want form data (which you can create
 with `new FormData()` or XML or something else. Always read the docs!
-expects JSON
 
 ## Instructions
 
