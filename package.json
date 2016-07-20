@@ -8,7 +8,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "debug": "mocha -R nyan --debug-brk & node-inspector",
+    "debug": "node-debug --hidden node_modules _mocha",
+    "debug-ide": "node-inspector --web-host $(/sbin/ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}') --web-port $UID & mocha --debug-brk --watch",
     "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json"
   },
   "repository": {
