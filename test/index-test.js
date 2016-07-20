@@ -1,12 +1,25 @@
 const expect = require('expect')
 const fs = require('fs')
-const jsdom = require('mocha-jsdom')
+const jsdom = require('jsdom')
 const path = require('path')
 
 describe('index', () => {
-  jsdom({
-    src: fs.readFileSync(path.resolve(__dirname, '..', 'index.js'), 'utf-8'),
-    html: fs.readFileSync(path.resolve(__dirname, '..', 'index.html'), 'utf-8')
+  before(done => {
+    const html = path.resolve(__dirname, '..', 'index.html')
+    const handlebars = path.resolve(__dirname, '..', 'handlebars.js')
+    const src = path.resolve(__dirname, '..', 'index.js')
+
+    jsdom.env(html, [handlebars, src], (err, window) => {
+      if (err) {
+        return done(err)
+      }
+
+      Object.keys(window).forEach(key => {
+        global[key] = window[key]
+      })
+
+      done()
+    })
   })
 
   it('does not commit token', () => {
@@ -14,10 +27,6 @@ describe('index', () => {
   })
 
   describe('templates', () => {
-    before(() => {
-      window.Handlebars = require('handlebars')
-    })
-
     describe('showing issues', () => {
       it('has the right vals in template', () => {
         const temp = document.getElementById('issues-template').innerHTML
