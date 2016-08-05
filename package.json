@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "debug": "node-debug --hidden node_modules _mocha --watch",
-    "debug-ide": "node-inspector --hidden node_modules --web-host $(/sbin/ifconfig eth0 | grep \"inet addr\" | awk -F: '{print $2}' | awk '{print $1}') --web-port $UID & node_modules/.bin/mocha --debug-brk --watch",
+    "debug-ide": "./bin/debug-ide",
     "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json"
   },
   "repository": {
