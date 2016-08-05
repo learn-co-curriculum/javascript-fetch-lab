@@ -7,7 +7,7 @@
 
 ## Introduction
 
-In this lab we're going to use `fetch` to get data from Github, fork a
+In this lab we're going to use `fetch` to get data from GitHub, fork a
 repository, and post issues to our forked repository.
 
 Using `fetch` to get remote data after using `XMLHttpRequest` is a
@@ -16,7 +16,7 @@ your whole life walking like a sucker.
 
 ![mean girls](http://i.giphy.com/4CP58gxwbBy2Q.gif)
 
-Getting data from the Github API with `fetch` is super simple. If we're
+Getting data from the GitHub API with `fetch` is super simple. If we're
 just trying to `GET` some JSON, we can do this:
 
 ```js
@@ -33,13 +33,13 @@ value to the next `then` as an argument.
 
 https://developer.github.com/v3/oauth/#3-use-the-access-token-to-access-the-api
 
-Github's API uses [OAuth2](https://developer.github.com/v3/oauth/) for
+GitHub's API uses [OAuth2](https://developer.github.com/v3/oauth/) for
 authorization. Setting up the full OAuth2 authorization code grant workflow is beyond
-the scope of this lab, but it is described well in the Github
+the scope of this lab, but it is described well in the GitHub
 [docs](https://developer.github.com/v3/oauth/), and I highly recommend
 you give it a read.
 
-Fortunately, Github also allows you to generate your own personal
+Fortunately, GitHub also allows you to generate your own personal
 authorization token that we can use to give us authorized access to the
 API.
 
@@ -79,7 +79,7 @@ write data as well as read it. Luckily, it's very easy to `POST` with
 `fetch` as well.
 
 Let's look at an example of posting a new comment to a commit with the
-Github API. Replace the commit with a commit from one of your
+GitHub API. Replace the commit with a commit from one of your
 repositories, and use your token if you want to try this out.
 
 ```js
@@ -111,7 +111,7 @@ same as we did with a `GET` request.
 
 **Top-tip:** Make sure you read the API documentation carefully! They
 will often specify which fields are required and which are optional,
-as well as the format of the request body. Github expects JSON data in
+as well as the format of the request body. GitHub expects JSON data in
 the body, but another API might want form data (which you can create
 with `new FormData()` or XML or something else. Always read the docs!
 
@@ -123,15 +123,15 @@ issues on that fork. The basic HTML and JavaScript are provided in
 and complete the code to make it work. Don't forget to run it in the
 browser to see it in action, and run the tests to make sure they pass!
 
-You'll need to read the Github API documentation to see how each function
+You'll need to read the GitHub API documentation to see how each function
 works.
 
 **Note:** Running it will require that you return your personal token in
 `getToken()`, however, the tests will **not** pass if you leave your
 token there, so before you commit and push, make sure you set `return
-''` in the `getToken` function. NEVER give out your token or check it into Github!
+''` in the `getToken` function. NEVER give out your token or check it into GitHub!
 
-1. Fork [this](https://github.com/learn-co-curriculum/javascript-fetch-lab) repository in the `forkRepo` function. Display the JSON result in the `results` div by calling `showResults`. [Github Forks API](https://developer.github.com/v3/repos/forks/)
+1. Fork [this](https://github.com/learn-co-curriculum/javascript-fetch-lab) repository in the `forkRepo` function. Display the JSON result in the `results` div by calling `showResults`. [GitHub Forks API](https://developer.github.com/v3/repos/forks/)
 2. In `showResults`, render the `repo-template` Handlebars template.
    Modify the template to include the repository full name and html url.
 3. Navigate to your forked repository (using the link in your template!)
@@ -139,7 +139,7 @@ token there, so before you commit and push, make sure you set `return
 `Issues`. They will probably be turned off by default, and the next step
 won't work so well if they are disabled!
 4. Create a new issue for your forked repository with the `createIssue`
-   function. Use the `title` and `body` values from the provided form. When the issue is created, read all issues for the repository with `getIssues`, and display the results in the `issues` div by calling `showIssues`. [Github Issues API](https://developer.github.com/v3/issues/)
+   function. Use the `title` and `body` values from the provided form. When the issue is created, read all issues for the repository with `getIssues`, and display the results in the `issues` div by calling `showIssues`. [GitHub Issues API](https://developer.github.com/v3/issues/)
 5. In `showIssues`, render the `issues-template` Handlebars template
    with the collection of issues. Each issue should display title, link to url, and body of the issue.
 6. Load it up and watch it work!
