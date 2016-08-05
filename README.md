@@ -20,9 +20,9 @@ Getting data from the Github API with `fetch` is super simple. If we're
 just trying to `GET` some JSON, we can do this:
 
 ```js
-fetch('https://api.github.com/repos/jquery/jquery/commits').
-  then(resp => resp.json() ).
-  then(json => console.log(json))
+fetch('https://api.github.com/repos/jquery/jquery/commits')
+  .then(resp => resp.json())
+  .then(json => console.log(json));
 ```
 
 Keeping in mind that we can use the `json` method of the `Body` mixin to
@@ -59,12 +59,13 @@ repositories with this API, so let's add our `Authorization` header
 (don't forget to assign your token to `const token`).
 
 ```js
-const token = "YOUR_TOKEN_HERE"
-fetch(`https://api.github.com/user/repos`, {
+const token = 'YOUR_TOKEN_HERE';
+
+fetch('https://api.github.com/user/repos', {
   headers: {
     Authorization: `token ${token}`
   }
-}).then(res => res.json()).then(json => console.log(json))
+}).then(res => res.json()).then(json => console.log(json));
 ```
 
 We just pass the desired headers as part of a second `options` argument to
@@ -82,23 +83,23 @@ Github API. Replace the commit with a commit from one of your
 repositories, and use your token if you want to try this out.
 
 ```js
-const token = "YOUR_TOKEN_HERE"
+const token = 'YOUR_TOKEN_HERE';
 const postData = {
-  "body": "Great stuff"
-}
+  body: 'Great stuff'
+};
 
 fetch('https://api.github.com/repos/:your_ghname/:your_repo/commits/:sha/comments', {
-  method: 'post',
+  method: 'POST',
   body: JSON.stringify(postData),
   headers: {
     Authorization: `token ${token}`
   }
-}).then(res => console.log(res))
+}).then(res => console.log(res));
 ```
 
 Here we created an object called `postData` that we will pass as a JSON
 string using `JSON.stringify` in the request `body`. We're also setting
-the method to `'post'`, and finally using our `Authorization` header
+the method to `'POST'`, and finally using our `Authorization` header
 like we did before, since any write action is going to require
 authorization.
 
