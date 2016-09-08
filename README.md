@@ -1,13 +1,12 @@
 # JavaScript fetch() Lab
 
-## Objectives
+## Overview
 
-1. Use `fetch()` to get remote data from GitHub
-2. Use `fetch()` to write data to GitHub
+In this lab, you'll use `fetch()` to get remote data from and write data to GitHub
 
 ## Introduction
 
-In this lab we're going to use `fetch` to get data from GitHub, fork a
+We're going to use `fetch` to get data from GitHub, fork a
 repository, and post issues to our forked repository.
 
 Using `fetch` to get remote data after using `XMLHttpRequest` is a
