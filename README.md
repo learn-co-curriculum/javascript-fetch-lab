@@ -32,7 +32,7 @@ Fortunately, GitHub also allows you to generate your own personal authorization 
 
 If you already have a personal token that you've been using to make API requests, you can keep using that one. Otherwise, you'll need to generate a new one.
 
-To start, go to https://github.com/settings/tokens and click "Generate new token." Name it something like "Learn.co", and check `repo` scope. Once you generate the token, make sure to copy and paste it somewhere, because once you leave that page, you won't be able to see it again.
+To start, go to [https://github.com/settings/tokens](https://github.com/settings/tokens) and click "Generate new token." Name it something like "Learn.co", and check `repo` scope. Once you generate the token, make sure to copy and paste it somewhere, because once you leave that page, you won't be able to see it again.
 
 Using the token to [access the API](https://developer.github.com/v3/oauth/#3-use-the-access-token-to-access-the-api) is a simple matter of creating an `Authorization` header with our request.
 
@@ -106,3 +106,5 @@ You'll need to read the GitHub API documentation to see how each function works.
 - [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - [GitHub API](https://developer.github.com/v3/)
 - [Handlebars](http://handlebarsjs.com)
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/javascript-fetch-lab'>Javascript Fetch Lab</a> on Learn.co and start learning to code for free.</p>
