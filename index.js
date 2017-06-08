@@ -2,8 +2,29 @@ const userName = ''
 const baseApi = 'https://api.github.com/'
 const fork = `${userName}/javascript-fetch-lab`
 
-function getIssues() {
+function Issue(attributes){
+  this.title = attributes.title;
+  this.body = attributes.body;
+  this.url = attributes.url;
+}
 
+function Repo(attributes){
+  this.html_url = attributes.html_url;
+  this.full_name = attributes.full_name;
+}
+
+Issue.prototype.template = function(){
+   var template = '<h4><li><a href=' + '"' + this.url + '"' + '>';
+   template += this.title + '</a></h4>'
+   template += '<p>' + this.body + '</p></li>'
+   return template;
+};
+
+Repo.prototype.template = function(){
+
+};
+
+function getIssues() {
   fetch(`${baseApi}repos/${fork}/issues`).
     then(resp => resp.json()).
     then(json => showIssues(json))
@@ -18,11 +39,10 @@ function createIssue() {
   const issueTitle = document.getElementById('title').value
   const issueBody = document.getElementById('body').value
   const postData = { title: issueTitle, body: issueBody }
-
   fetch(`${baseApi}repos/${fork}/issues`, {
     method: 'post',
     headers: {
-      Authorization: `token ${getToken()}`
+      'Authorization': `token ${getToken()}`
     },
     body: JSON.stringify(postData)
   }).then(resp => getIssues())
@@ -39,10 +59,11 @@ function forkRepo() {
   fetch(`${baseApi}repos/${repo}/forks`, {
     method: 'post',
     headers: {
-      Authorization: `token ${getToken()}`
+      'Authorization': `token ${getToken()}`
     }
   }).then(resp => resp.json()).
-    then(json => showResults(json))
+    then(json => showResults(json)).
+    then(json => {let repo = new Repo(json)})
 }
 
 function getToken() {
