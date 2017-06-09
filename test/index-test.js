@@ -25,7 +25,11 @@ describe('index', () => {
     expect(getToken()).toEqual('')
   })
 
-
+  describe('index.html', () => {
+    it('creates a div with an id of "issues"', () => {
+      expect(document.getElementById('issues')).toExist()
+    })
+  })
 
   describe('fetch functions', () => {
     let fetchSpy

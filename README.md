@@ -93,7 +93,7 @@ You'll need to read the GitHub API documentation to see how each function works.
 
 3. Navigate to your forked repository (using the link in your html!) and enable Issues by clicking on the `Settings` tab and checking `Issues`. They will probably be turned off by default, and the next step won't work so well if they are disabled!
 
-4. Create a new issue for your forked repository with the `createIssue` function. Use the `title` and `body` values from the provided form. After the issue is created, fetch and display a list of all issues associated with your repository on the page.   [GitHub Issues API](https://developer.github.com/v3/issues/)
+4. Create a new issue for your forked repository with the `createIssue` function. Use the `title` and `body` values from the provided form. After the issue is created, fetch and display a list of all issues associated with your repository on the page. Append them to a div with an id of "issues".   [GitHub Issues API](https://developer.github.com/v3/issues/)
 
 5. Load it up and watch it work!
 
