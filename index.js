@@ -9,8 +9,7 @@ function Issue(attributes){
 }
 
 function Repo(attributes){
-  this.html_url = attributes.html_url;
-  this.full_name = attributes.full_name;
+  this.url = attributes.url;
 }
 
 Issue.prototype.template = function(){
@@ -21,7 +20,8 @@ Issue.prototype.template = function(){
 };
 
 Repo.prototype.template = function(){
-
+  var template = `<h3>Forked Successfully!</h3><a href="${this.url}"> ${this.url}</a>`
+  return template;
 };
 
 function getIssues() {
@@ -31,8 +31,7 @@ function getIssues() {
 }
 
 function showIssues(json) {
-  const template = Handlebars.compile(document.getElementById('issues-template').innerHTML)
-  document.getElementById('issues').innerHTML = template(json)
+
 }
 
 function createIssue() {
@@ -48,9 +47,8 @@ function createIssue() {
   }).then(resp => getIssues())
 }
 
-function showResults(json) {
-  const template = Handlebars.compile(document.getElementById('repo-template').innerHTML)
-  document.getElementById('results').innerHTML = template(json)
+function showForkedRepo(repo) {
+  document.getElementById('results').innerHTML = repo.template()
 }
 
 function forkRepo() {
@@ -61,9 +59,10 @@ function forkRepo() {
     headers: {
       'Authorization': `token ${getToken()}`
     }
-  }).then(resp => resp.json()).
-    then(json => showResults(json)).
-    then(json => {let repo = new Repo(json)})
+  }).then(resp => {
+    let repo = new Repo(resp);
+    showForkedRepo(repo);
+  })
 }
 
 function getToken() {
