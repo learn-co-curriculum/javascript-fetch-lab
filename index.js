@@ -2,6 +2,8 @@ const userName = ''
 const baseApi = 'https://api.github.com/'
 const fork = `${userName}/javascript-fetch-lab`
 
+//Issue and Repo objects and templates
+
 function Issue(attributes){
   this.title = attributes.title;
   this.body = attributes.body;
@@ -13,9 +15,7 @@ function Repo(attributes){
 }
 
 Issue.prototype.template = function(){
-   var template = '<h4><li><a href=' + '"' + this.url + '"' + '>';
-   template += this.title + '</a></h4>'
-   template += '<p>' + this.body + '</p></li>'
+   var template = `<li>Title: <a href="${this.url}">${this.title} </a><span> | Body: ${this.body}</span></li>`
    return template;
 };
 
@@ -24,15 +24,7 @@ Repo.prototype.template = function(){
   return template;
 };
 
-function getIssues() {
-  fetch(`${baseApi}repos/${fork}/issues`).
-    then(resp => resp.json()).
-    then(json => showIssues(json))
-}
-
-function showIssues(json) {
-
-}
+//Create an issue through the Github API
 
 function createIssue() {
   const issueTitle = document.getElementById('title').value
@@ -47,9 +39,25 @@ function createIssue() {
   }).then(resp => getIssues())
 }
 
-function showForkedRepo(repo) {
-  document.getElementById('results').innerHTML = repo.template()
+//Fetch all issues through the Github API and display / append to the DOM
+
+function getIssues(data) {
+  fetch(`${baseApi}repos/${fork}/issues`).
+    then(resp => {
+      resp.json().then( data => {
+        for (let i = 0; i < data.length; i++){
+          displayIssue(new Issue(data[i]));
+        }
+      } )
+    })
 }
+
+function displayIssue(issue) {
+  $('#issues').append(issue.template())
+}
+
+//Fetch and show repo info
+
 
 function forkRepo() {
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
@@ -64,6 +72,11 @@ function forkRepo() {
     showForkedRepo(repo);
   })
 }
+
+function showForkedRepo(repo) {
+  $('#results').append(repo.template())
+}
+
 
 function getToken() {
   return ''
