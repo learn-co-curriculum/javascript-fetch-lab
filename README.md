@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this lab, you'll use `fetch()` to get remote data from and write data to GitHub. 
+In this lab, you'll use `fetch()` to get remote data from and write data to GitHub.
 
 ## Introduction
 
@@ -87,17 +87,15 @@ You'll need to read the GitHub API documentation to see how each function works.
 
 **Note:** Running it will require that you return your personal token in `getToken()`, however, the tests will **not** pass if you leave your token there, so before you commit and push, make sure you set `return ''` in the `getToken` function. NEVER give out your token or check it into GitHub!
 
-1. Fork [this](https://github.com/learn-co-curriculum/javascript-fetch-lab) repository in the `forkRepo` function. Display the JSON result in the `results` div by calling `showResults`. [GitHub Forks API](https://developer.github.com/v3/repos/forks/)
+1. Fork [this](https://github.com/learn-co-curriculum/javascript-fetch-lab) repository in the `forkRepo` function. Display the JSON result in the `results` div by calling `showForkedRepo`. [GitHub Forks API](https://developer.github.com/v3/repos/forks/)
 
-2. In `showResults`, render the `repo-template` Handlebars template. Modify the template to include the repository full name and html url.
+2. In `showForkedRepo`, display the repo information in the browser by appending html with a link to the repository url to the DOM.
 
-3. Navigate to your forked repository (using the link in your template!) and enable Issues by clicking on the `Settings` tab and checking `Issues`. They will probably be turned off by default, and the next step won't work so well if they are disabled!
+3. Navigate to your forked repository (using the link in your html!) and enable Issues by clicking on the `Settings` tab and checking `Issues`. They will probably be turned off by default, and the next step won't work so well if they are disabled!
 
-4. Create a new issue for your forked repository with the `createIssue` function. Use the `title` and `body` values from the provided form. When the issue is created, read all issues for the repository with `getIssues`, and display the results in the `issues` div by calling `showIssues`. [GitHub Issues API](https://developer.github.com/v3/issues/)
+4. Create a new issue for your forked repository with the `createIssue` function. Use the `title` and `body` values from the provided form. After the issue is created, fetch and display a list of all issues associated with your repository on the page. Append them to a div with an id of "issues".   [GitHub Issues API](https://developer.github.com/v3/issues/)
 
-5. In `showIssues`, render the `issues-template` Handlebars template with the collection of issues. Each issue should display title, link to url, and body of the issue.
-
-6. Load it up and watch it work!
+5. Load it up and watch it work!
 
 ![fetch()](http://missmonet.net/wp-content/uploads/2014/04/so-fetch-gretchen-xmas-gif.gif)
 
@@ -105,6 +103,5 @@ You'll need to read the GitHub API documentation to see how each function works.
 
 - [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - [GitHub API](https://developer.github.com/v3/)
-- [Handlebars](http://handlebarsjs.com)
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/javascript-fetch-lab'>Javascript Fetch Lab</a> on Learn.co and start learning to code for free.</p>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/javascript-fetch-lab' title='JavaScript Fetch Lab'>Javascript Fetch Lab</a> on Learn.co and start learning to code for free.</p>
