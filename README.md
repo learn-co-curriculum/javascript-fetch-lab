@@ -80,7 +80,7 @@ You'll need to read the GitHub API documentation to see how each function works.
 
 **Note:** Running it will require that you return your personal token in `getToken()`, however, the tests will **not** pass if you leave your token there, so before you commit and push, make sure you set `return ''` in the `getToken` function. NEVER give out your token or check it into GitHub!
 
-1. Fork [this repository](https://github.com/learn-co-curriculum/javascript-fetch-lab) in the `forkRepo` function. Display the JSON result in the `results` div by calling `showForkedRepo`. Read more about forking in the [GitHub Forks API documentation](https://developer.github.com/v3/repos/forks/). You should only be raising issues on your forked copy of the repository — ***not on [the repo owned by learn-co-curriculum](https://github.com/learn-co-curriculum/javascript-fetch-lab)***.
+1. Fork [this repository](https://github.com/learn-co-curriculum/javascript-fetch-lab) in the `forkRepo` function. Display the JSON result in the `results` div by calling `showForkedRepo`. Read more about forking in the [GitHub Forks API documentation](https://developer.github.com/v3/repos/forks/). You should only be raising issues on *your forked copy* of the repository — ***not on the repo owned by learn-co-curriculum***.
 
 2. In `showForkedRepo`, display the repo information in the browser by appending html with a link to the repository url to the DOM.
 
