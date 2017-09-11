@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>JavaScript fetch() Lab</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
     <style>
       .flexbox-container {
         display: -ms-flex;
@@ -19,11 +19,10 @@
         margin-right: 20px;
       }
     </style>
+    <!-- Include Mocha's stylesheet to style test results -->
+    <link rel="stylesheet" href="node_modules/mocha/mocha.css">
   </head>
   <body>
-    <main id="main">
-      <div id="errors"></div>
-    </main>
     <div class="flexbox-container">
       <div>
         <h3>Create Fork</h3>
@@ -40,6 +39,24 @@
         <div id="issues"></div>
       </div>
     </div>
+
+    <!-- TESTS -->
+    <div id="mocha"></div>
+    <!-- Include Mocha and set it up for BDD-style testing. -->
+    <script src="node_modules/mocha/mocha.js"></script>
+    <!-- <script src="node_modules/expect/umd/expect.min.js"></script> -->
+    <script>mocha.setup('bdd')</script>
+    <!-- Include Chai as the matcher library. -->
+    <script src="node_modules/chai/chai.js"></script>
+    <!-- Include Sinon as the library for spies, stubs, and mocks. -->
+    <script src="node_modules/sinon/pkg/sinon.js"></script>
+    <!-- Include any fixtures that the test suite and/or student's code relies on. -->
+    <!-- <script src="test/fixtures.js"></script> -->
+    <!-- student's file -->
     <script src="index.js"></script>
+    <!-- Include the JavaScript file containing the tests. -->
+    <script src="test/index-test.js"></script>
+    <!-- Include Flatiron School's minified test runner to push results to Learn. -->
+    <script src="node_modules/learn-browser/learnBrowser.min.js"></script>
   </body>
 </html>
