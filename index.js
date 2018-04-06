@@ -30,8 +30,8 @@ function createIssue() {
     method: 'post',
     body: JSON.stringify(getIssuesInput()),
     headers: {
-      Authorization: 'token  81eeb2eecf8eebc97106ef864e82f44e5a2f2ec7'
-      // ${getToken()}'
+      Authorization: 'token  ${getToken()}'
+
     }
   }).then(response => response.json()).then(getIssues())
 }
@@ -48,7 +48,7 @@ function forkRepo() {
   fetch(url, {
     method: 'post',
     headers: {
-      Authorization: 'token  81eeb2eecf8eebc97106ef864e82f44e5a2f2ec7'
+      Authorization: 'token  ${getToken()}'
     }
   }).then(response => response.json()).then(json => showForkedRepo(json))
 }
@@ -56,6 +56,6 @@ function forkRepo() {
 function getToken() {
   //change to your token to run in browser, but set
   //back to '' before committing so all tests pass
-  return '1d377c033933f48fa4360286edd17a0204f0281c '
-  // return ''
+
+  return ''
 }
