@@ -80,6 +80,8 @@ You'll need to read the GitHub API documentation to see how each function works.
 
 ***Note***: Running it will require that you return your personal token in `getToken()`, however, the tests will **not** pass if you leave your token there, so before you commit and push, make sure you set `return ''` in the `getToken` function. NEVER give out your token or check it into GitHub!
 
+0. Open up the `index.html` file in your browser and familiarize yourself with the DOM. Click on the two links on the page, 'Fork Repository' and 'Create Issue'. They don't appear to do anything at the moment. Or do they?... Hint: Open up the console in your browser and see if clicking those two links do anything...
+
 1. In the `forkRepo` function, using fetch, fork [this](https://github.com/learn-co-curriculum/javascript-fetch-lab) repository. Then, once the fetch resolves, display the JSON result in the `#results` div by calling `showResults`. Read more about forking in the [GitHub Forks API documentation](https://developer.github.com/v3/repos/forks/). ***You should only be raising issues on your forked copy of the repository — not on the repo owned by learn-co-curriculum***.
 
 2. In `showResults`, display the repo information in the browser by appending html with a link to the repository url inside the `#results` div. For example:
