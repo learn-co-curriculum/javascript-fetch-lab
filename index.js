@@ -1,3 +1,5 @@
+const baseURL = 'https://api.github.com'
+
 function getIssues() {
 }
 
@@ -13,7 +15,7 @@ function showResults(json) {
 
 function forkRepo() {
   console.log("Inside forkRepo function")
-  const url = 'https://api.github.com/repos/learn-co-curriculum/javascript-fetch-lab/forks'
+  const url = `${baseURL}/repos/learn-co-curriculum/javascript-fetch-lab/forks`
   //use fetch to fork it!
 }
 
