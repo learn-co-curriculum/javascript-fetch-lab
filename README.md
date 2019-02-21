@@ -96,8 +96,8 @@ You'll need to read the GitHub API documentation to see how each function works.
 4. Create a new issue for your forked repository with the `createIssue` function. Read more about creating issues via API calls in the [GitHub Issues API documentation](https://developer.github.com/v3/issues/). Use the `#title` and `#body` values from the provided form. You should only be creating an issue with a `title` and `body`; you should not have to create an issue with an asignee, label, milestone, or any other data. After the issue is created, fetch and display a list of all issues associated with your repository on the page. In other words, once you fetch to create an issue, you should call the `getIssues` function which should make another fetch call to get ALL issues from this repo; then once you get all the issues, render them onto the DOM by calling the `showIssues` function. Inside the `showIssues` function, append the list of issues to the div with an id of `#issues`. For example:
 ```
 <div id="issues">
-    <li>Title: <a href="https://api.github.com/some-path/issues/1">title1 </a><span> | Body: body1</span></li>
-    <li>Title: <a href="https://api.github.com/some-path/issues/2">title2 </a><span> | Body: body2</span></li>
+    <li>Title: <a href="https://github.com/some-path/issues/1">title1 </a><span> | Body: body1</span></li>
+    <li>Title: <a href="https://github.com/some-path/issues/2">title2 </a><span> | Body: body2</span></li>
 </div>
 ```
 
