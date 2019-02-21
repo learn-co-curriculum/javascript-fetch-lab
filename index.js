@@ -5,13 +5,15 @@ function showIssues(json) {
 }
 
 function createIssue() {
+  console.log("Inside createIssue function")
 }
 
 function showResults(json) {
 }
 
 function forkRepo() {
-  const repo = 'learn-co-curriculum/javascript-fetch-lab'
+  console.log("Inside forkRepo function")
+  const url = 'https://api.github.com/repos/learn-co-curriculum/javascript-fetch-lab/forks'
   //use fetch to fork it!
 }
 
